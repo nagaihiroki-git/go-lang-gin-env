@@ -1,0 +1,1 @@
+## GoLangをいじりたかったから作ったrepository
