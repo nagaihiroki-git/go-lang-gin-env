@@ -1,12 +1,10 @@
 # goバージョン
-FROM golang:1.19.1-alpine
-# アップデートとgitのインストール
-RUN apk update && apk add git
-# boiler-plateディレクトリの作成
-RUN mkdir /go/src/github.com/boiler-plate
+FROM golang:1.16.3-alpine
+# アップデートとgitのインストール！！
+RUN apk add --update &&  apk add git
+# appディレクトリの作成
+RUN mkdir /go/src/app
 # ワーキングディレクトリの設定
-WORKDIR /go/src/github.com/boiler-plate
+WORKDIR /go/src/app
 # ホストのファイルをコンテナの作業ディレクトリに移行
-ADD . /go/src/github.com/boiler-plate
-# パッケージのインポート
-RUN go get -u golang.org/x/tools/cmd/goimports
+ADD . /go/src/app
