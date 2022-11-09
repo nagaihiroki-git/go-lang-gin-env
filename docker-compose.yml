@@ -1,9 +1,12 @@
-version: "3"
+version: '3'
+
 services:
-  goapp: # サービス名
-    build: # ビルドに使うDockerファイルのパス
+  app:
+    build:
       context: .
-      dockerfile: ./build/Dockerfile
-    tty: true # コンテナの永続化
+      dockerfile: app/src/Dockerfile
+    ports:
+      - "3000:8080"
     volumes:
-      - ./cmd:/go/src/app # マウントディレクトリ
+      - ./app/src/:/go/src
+    tty: true
