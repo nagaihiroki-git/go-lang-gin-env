@@ -11,11 +11,11 @@ import (
 
 var Db *gorm.DB
 
-func init() {
-	user := os.Getenv("MYSQL_USER")
+func Init() {
+	user := "root"
 	pw := os.Getenv("MYSQL_PASSWORD")
-	db_name := os.Getenv("MYSQL_DATABASE")
-	var path string = fmt.Sprintf("%s:%s@tcp(db:3306)/%s?charset=utf8&parseTime=true", user, pw, db_name)
+	dbName := "test_db"
+	var path string = fmt.Sprintf("%s:%s@tcp(db:3306)/%s?charset=utf8&parseTime=true", user, pw, dbName)
 	dialector := mysql.Open(path)
 	var err error
 	if Db, err = gorm.Open(dialector); err != nil {

@@ -3,6 +3,7 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"go-sample-env/cmd"
+	"strconv"
 )
 
 func DefineRoutes(r gin.IRouter) {
@@ -13,6 +14,9 @@ func DefineRoutes(r gin.IRouter) {
 				"message": "SUCCESS!!!!",
 			})
 		})
-		v1.GET("/test2", cmd.Print())
+		v1.GET("/test2", func(c *gin.Context) {
+			id, _ := strconv.Atoi(c.Query("id"))
+			c.JSON(200, cmd.Print(id))
+		})
 	}
 }
