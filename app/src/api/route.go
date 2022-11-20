@@ -3,6 +3,7 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"go-sample-env/cmd"
+	"go-sample-env/pkg/controllers"
 	"strconv"
 )
 
@@ -18,5 +19,6 @@ func DefineRoutes(r gin.IRouter) {
 			id, _ := strconv.Atoi(c.Query("id"))
 			c.JSON(200, cmd.Print(id))
 		})
+		v1.GET("/post", controllers.FetchPost())
 	}
 }

@@ -3,22 +3,13 @@ package cmd
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"go-sample-env/pkg/infra"
-	"gorm.io/gorm"
+	database "go-sample-env/pkg/infra"
+	"go-sample-env/pkg/models"
 )
-
-type Model struct {
-	ID uint `gorm:"primary_key"`
-}
-
-type User struct {
-	gorm.Model
-	Name string
-}
 
 func Print(id int) gin.H {
 	database.Init()
-	user1 := User{}
+	user1 := models.User{}
 	print(id)
 	database.Db.Take(&user1, id)
 
