@@ -20,5 +20,6 @@ func DefineRoutes(r gin.IRouter) {
 			c.JSON(200, cmd.Print(id))
 		})
 		v1.GET("/post", controllers.FetchPost())
+		v1.POST("/create/post", controllers.CreatePost())
 	}
 }

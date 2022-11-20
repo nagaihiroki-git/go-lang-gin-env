@@ -22,3 +22,14 @@ func FetchPost(id int) Post {
 		Body:  post.Body,
 	}
 }
+
+func CreatePost(title string, body string) {
+	database.Init()
+	println(title)
+	post := Post{
+		Title: title,
+		Body:  body,
+	}
+	database.Db.Create(&post)
+
+}
