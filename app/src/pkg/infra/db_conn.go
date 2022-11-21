@@ -12,9 +12,9 @@ import (
 var Db *gorm.DB
 
 func Init() {
-	user := "root"
+	user := os.Getenv("MYSQL_ROOT_USER")
 	pw := os.Getenv("MYSQL_PASSWORD")
-	dbName := "test_db"
+	dbName := os.Getenv("MYSQL_DB")
 	var path string = fmt.Sprintf("%s:%s@tcp(db:3306)/%s?charset=utf8&parseTime=true", user, pw, dbName)
 	dialector := mysql.Open(path)
 	var err error
@@ -28,7 +28,7 @@ func connect(dialector gorm.Dialector, count uint) {
 	var err error
 	if Db, err = gorm.Open(dialector); err != nil {
 		if count > 1 {
-			time.Sleep(time.Second * 2)
+			time.Sleep(time.Second * 10)
 			count--
 			fmt.Printf("retry... count:%v\n", count)
 			connect(dialector, count)
