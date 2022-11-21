@@ -2,6 +2,7 @@ import React from 'react';
 import '../..//App.scss';
 import axios from "axios";
 import {useParams} from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 export const Post = () => {
     React.useEffect(() => {
@@ -25,8 +26,8 @@ export const Post = () => {
     return (
         <>
             <div className={'index'}>
-                <div>TITLE::{post.title}</div>
-                <div>BODY::{post.body}</div>
+                <h1>TITLE::{post.title}</h1>
+                <ReactMarkdown>{post.body}</ReactMarkdown>
             </div>
         </>
     );

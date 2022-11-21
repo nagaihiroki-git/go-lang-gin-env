@@ -1,0 +1,16 @@
+.body{
+  &__wrap{
+    display: flex;
+  }
+  &__preview{
+    border: #333333 1px solid;
+    width: 50vw;
+    min-height: 100vh;
+    height: fit-content;
+  }
+  &__textarea{
+    width: 50vw;
+    min-height: 100vh;
+    height: fit-content;
+  }
+}

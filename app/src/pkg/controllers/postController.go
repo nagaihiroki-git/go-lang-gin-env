@@ -18,14 +18,8 @@ func FetchPost() gin.HandlerFunc {
 	}
 }
 
-type Post struct {
-	Title string `json:"title"`
-	Body  string `json:"body"`
-}
-
 func CreatePost() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Request.ParseForm()
 		title := c.PostForm("title")
 		body := c.PostForm("body")
 		fmt.Println(title)
