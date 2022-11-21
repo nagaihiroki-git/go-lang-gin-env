@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
 
 export const CreatePost = () => {
   const [title, setTitle] = React.useState<string>("");
@@ -25,13 +26,15 @@ export const CreatePost = () => {
         }}
       />
       <div>BODY</div>
-      <input
-        type="text"
+      <textarea
         placeholder={"body"}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+        onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
           setBody(event.target.value);
         }}
       />
+        <div>
+            <ReactMarkdown>{body}</ReactMarkdown>
+        </div>
       <button onClick={savePost}>Save</button>
     </div>
   );
