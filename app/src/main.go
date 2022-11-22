@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/nagaihiroki-git/go-lang-gin-env/adapter/api/route"
+	"github.com/nagaihiroki-git/go-lang-gin-env/adapter/api"
 )
 
 func main() {
