@@ -1,10 +1,11 @@
 package main
 
 import (
+	"time"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"go-sample-env/api"
-	"time"
+	"github.com/nagaihiroki-git/go-lang-gin-env/adapter/api/route"
 )
 
 func main() {

@@ -1,7 +1,7 @@
 package models
 
 import (
-	database "go-sample-env/pkg/infra"
+	database "github.com/nagaihiroki-git/go-lang-gin-env/pkg/infra"
 	"gorm.io/gorm"
 )
 

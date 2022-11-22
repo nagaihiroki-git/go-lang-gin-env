@@ -2,9 +2,11 @@ package controllers
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"go-sample-env/pkg/models"
 	"strconv"
+
+	"github.com/nagaihiroki-git/go-lang-gin-env/pkg/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 func FetchPost() gin.HandlerFunc {

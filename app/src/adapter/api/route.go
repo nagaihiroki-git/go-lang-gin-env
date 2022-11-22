@@ -1,8 +1,9 @@
 package api
 
 import (
+	"github.com/nagaihiroki-git/go-lang-gin-env/pkg/controllers"
+
 	"github.com/gin-gonic/gin"
-	"go-sample-env/pkg/controllers"
 )
 
 func DefineRoutes(r gin.IRouter) {
